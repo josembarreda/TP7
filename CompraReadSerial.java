@@ -12,6 +12,7 @@ public class CompraReadSerial{
         	try{
         		FileInputStream outFile = new FileInputStream("compras.dat");
         		ObjectInputStream out = new ObjectInputStream(outFile);
+                    System.out.println("Lista de comprar realizadas\n");
                 while((outFile.available()) > 0){
                     c = (Compra)out.readObject();
                     System.out.println(c.getPer().getName() + " ha comprado " + c.getCant() + " kilos de  " + c.getAp().getProd() + " " + c.getAp().getColor() + " " + c.getAp().getTipo()+" por "+c.getAp().getPrecio()*c.getCant()+" euros, a "+c.getAp().getPrecio()+" euros/kg\n");
